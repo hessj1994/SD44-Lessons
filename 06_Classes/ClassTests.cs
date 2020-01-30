@@ -30,5 +30,27 @@ namespace _06_Classes
             Vehicle anotherCar = new Vehicle("Toyota", "Corolla", 350000, "Maroon", VehicleType.Car);
             Console.WriteLine($"{anotherCar.Make} {anotherCar.Model}");
         }
+
+
+        [TestMethod]
+        public void PersonTests()
+        {
+            Person firstPerson = new Person();
+            firstPerson.FirstName = "George";
+
+            Console.WriteLine(firstPerson.FirstName);
+            firstPerson.LastName = "Wilson";
+
+            Console.WriteLine(firstPerson.FullName);
+
+            Person blankPerson = new Person();
+            blankPerson.FirstName = "";
+            blankPerson.LastName = "                   ";
+            Console.WriteLine("Blank name: " + blankPerson.FullName);
+
+            firstPerson.DOB = new DateTime(1990, 3, 15);
+            Console.WriteLine($"First person is {firstPerson.Age} years old.");
+            Console.WriteLine($"Blank person is {blankPerson.Age} years old.");
+        }
     }
 }

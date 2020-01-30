@@ -26,7 +26,7 @@ namespace _05_Methods
             double sum = numberOne + numberTwo;
             return sum;
         }
-        private int CalculateAge(DateTime birthday)
+        public int CalculateAge(DateTime birthday)
         {
             TimeSpan ageSpan = DateTime.Now - birthday;
             double totalAgeInYear = ageSpan.TotalDays / 365.25;
