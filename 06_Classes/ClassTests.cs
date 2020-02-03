@@ -14,7 +14,7 @@ namespace _06_Classes
             airplane.Make = "Boeing";
             airplane.Model = "737 Max";
             airplane.Mileage = 0.1;
-
+           
             Console.WriteLine("{0} {1}", airplane.Make, airplane.Model);
             Console.WriteLine(airplane.Make + " " + airplane.Model);
 
