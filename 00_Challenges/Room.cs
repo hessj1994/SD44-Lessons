@@ -16,7 +16,7 @@ namespace _00_Challenges
 
     class Room
     {
-        public double Length { get; private set; }
+        public double Length { get; set; }
         public double Width { get; set; }
         public double Height { get; set; }
 
@@ -26,6 +26,7 @@ namespace _00_Challenges
             double squareFootage = Length * Width;
             return squareFootage;
         }
+
         public double CalculateSquareFootage(int denominator)
         {
             double squareFootage = Length * Width;
