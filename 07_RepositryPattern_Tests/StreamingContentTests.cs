@@ -7,6 +7,7 @@ namespace _07_RepositryPattern_Tests
     [TestClass]
     public class StreamingContentTests
     {
+
         [TestMethod]
         public void SetTitle_ShouldSetCorrectString()
         {
@@ -19,10 +20,20 @@ namespace _07_RepositryPattern_Tests
 
             Assert.AreEqual(expected, actual);
         }
-        [TestMethod]
-        public void MyTestMethod()
-        {
 
+        [DataTestMethod]
+        [DataRow(MaturityRating.R, false)]
+        [DataRow(MaturityRating.G, true)]
+        [DataRow(MaturityRating.NC_17, false)]
+        [DataRow(MaturityRating.PG, true)]
+        public void SetMaturityRating_ShouldGetCorrectIsFamilyFriendly(MaturityRating rating, bool isFriendly)
+        {
+            StreamingContent content = new StreamingContent("Genre", "Title", 4, StreamingQualityType.HD720, "description", "English", rating);
+
+            bool actual = content.IsFamilyFriendly;
+            bool expected = isFriendly;
+
+            Assert.AreEqual(expected, actual);
         }
     }
 }
