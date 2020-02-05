@@ -20,10 +20,28 @@ namespace _07_RepositoryPattern_Repository.ContentTypes
         // Look into Hashsets
         // Check each episode and add its season number to a collection
         // Look for all unique season numbers (Count from Hashset)
-        public int SeasonCount { get; set; }
+        public int SeasonCount
+        {
+            get
+            {
+                HashSet<int> seasonNumbers = new HashSet<int>();
+                foreach(Episode episode in Episodes)
+                {
+                    seasonNumbers.Add(episode.SeasonNumber);
+                }
+                return seasonNumbers.Count;
+            }
+        }
 
         // Return the Count from our Episodes property
-        public int EpisodeCount { get; set; }
+        public int EpisodeCount
+        {
+            //get => Episodes.Count; //-- Expression Body
+            get
+            {
+                return Episodes.Count; //-- Block Body
+            }
+        }
         public double AverageRunTime
         {
             get

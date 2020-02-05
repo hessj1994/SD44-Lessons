@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace _07_RepositoryPattern_Repository.ContentTypes
 {
-    class Movie
+    public class Movie : StreamingContent
     {
+        public Movie() { }
+        public Movie(string genre, string title, int starRating, StreamingQualityType typeOfQuality, string description, string language, MaturityRating maturityRating, double runTime)
+             : base(genre, title, starRating, typeOfQuality, description, language, maturityRating)
+        {
+            RunTime = runTime;
+        }
+
+        public double RunTime { get; set; }
     }
 }

@@ -8,7 +8,7 @@ namespace _07_RepositoryPattern_Repository
 {
     public class StreamingContentRepository
     {
-        private readonly List<StreamingContent> _contentDirectory = new List<StreamingContent>();
+        protected readonly List<StreamingContent> _contentDirectory = new List<StreamingContent>();
         public bool AddContentToDirectory(StreamingContent content)
         {
             int directoryLength= _contentDirectory.Count();
