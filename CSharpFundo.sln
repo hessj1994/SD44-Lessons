@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_RepositoryPattern_Consol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_Interfaces_Introduction", "09_Interfaces_Introduction\09_Interfaces_Introduction.csproj", "{F9D6ACD2-93E1-4201-876F-39936D517AE9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_Interfaces_WorkingWithDI", "09_Interfaces_WorkingWithDI\09_Interfaces_WorkingWithDI.csproj", "{80BE7B71-10D4-460D-84F6-D4F949455596}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{F9D6ACD2-93E1-4201-876F-39936D517AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9D6ACD2-93E1-4201-876F-39936D517AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9D6ACD2-93E1-4201-876F-39936D517AE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80BE7B71-10D4-460D-84F6-D4F949455596}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80BE7B71-10D4-460D-84F6-D4F949455596}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80BE7B71-10D4-460D-84F6-D4F949455596}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80BE7B71-10D4-460D-84F6-D4F949455596}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
