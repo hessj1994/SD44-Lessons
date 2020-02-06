@@ -29,7 +29,7 @@ namespace _07_RepositryPattern_Tests
 
             repo.AddContentToDirectory(content);
 
-            List<StreamingContent> contents = repo.GetContents();
+            List<StreamingContent> contents = repo.GetAllContents();
 
             bool directoryHasContent = contents.Contains(content);
             Assert.IsTrue(directoryHasContent);

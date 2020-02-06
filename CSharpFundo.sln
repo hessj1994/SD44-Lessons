@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_Inheritance_Tests", "08_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_Inheritance_Classes", "08_Inheritance_Classes\08_Inheritance_Classes.csproj", "{A2D125F3-EDA7-4985-8EB7-769472751C9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_RepositoryPattern_ConsoleUI", "07_RepositoryPattern_ConsoleUI\07_RepositoryPattern_ConsoleUI.csproj", "{C1B15C20-FF31-4EEB-BE77-06924B08884D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{A2D125F3-EDA7-4985-8EB7-769472751C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2D125F3-EDA7-4985-8EB7-769472751C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2D125F3-EDA7-4985-8EB7-769472751C9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1B15C20-FF31-4EEB-BE77-06924B08884D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1B15C20-FF31-4EEB-BE77-06924B08884D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1B15C20-FF31-4EEB-BE77-06924B08884D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1B15C20-FF31-4EEB-BE77-06924B08884D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

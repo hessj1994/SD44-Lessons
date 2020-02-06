@@ -17,7 +17,7 @@ namespace _07_RepositoryPattern_Repository
             return wasAdded;
         }
 
-        public List<StreamingContent> GetContents()
+        public List<StreamingContent> GetAllContents()
         {
             return _contentDirectory;
         }
