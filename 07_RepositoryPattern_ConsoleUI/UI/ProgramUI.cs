@@ -46,12 +46,14 @@ namespace _07_RepositoryPattern_ConsoleUI.UI
                         break;
                     case "2":
                         //-- Display All Shows
+                        ShowAllShows();
                         break;
                     case "3":
                         //-- Display All Movies
                         break;
                     case "4":
                         //-- Add New Content
+                        AddNewStreamingContent();
                         break;
                     case "5":
                         //-- Update Content
@@ -68,7 +70,101 @@ namespace _07_RepositoryPattern_ConsoleUI.UI
                 }
             }
         }
+        //Access to streaming repo/the add method 
+        //Prompt the user 
+        //Take in content 
+        //Actually add the content through our add method 
+        private void AddNewStreamingContent()
+        {
+            StreamingContent content = new StreamingContent();
+            Console.WriteLine("Hello there, please enter a title");
+            content.Title = Console.ReadLine();
 
+            Console.WriteLine("Now, add a description");
+            content.Description = Console.ReadLine();
+
+            Console.WriteLine("What is the genre");
+            content.Genre = Console.ReadLine();
+
+            Console.WriteLine("What is the star rating?");
+            content.StarRating = Convert.ToInt32(Console.ReadLine());
+            //content.StarRating = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Select a Maturity rating (enter a value between 1 and 5)\n" +
+                "1) G \n" +
+                "2) PG \n" +
+                "3) PG 13 \n" +
+                "4) R \n" +
+                "5) NC 17");
+
+            string maturityString = Console.ReadLine();
+            int ratingID = int.Parse(maturityString);
+            content.MaturityRating = (MaturityRating)ratingID;
+
+            Console.WriteLine("Select a streaming Quality from below (choose a value between 1 and 5 \n" +
+                "1) SD240 \n" +
+                "2) SD480 \n" +
+                "3) HD720 \n" +
+                "4) HD1080 \n" +
+                "5) UHD4k");
+            string userInput = Console.ReadLine();
+            switch (userInput)
+            {
+                case "1":
+                    content.TypeOfStreamingQuality = StreamingQualityType.SD240;
+                    break;
+                case "2":
+                    content.TypeOfStreamingQuality = StreamingQualityType.SD480;
+                    break;
+                case "3":
+                    content.TypeOfStreamingQuality = StreamingQualityType.HD720;
+                    break;
+                case "4":
+                    content.TypeOfStreamingQuality = StreamingQualityType.HD1080;
+                    break;
+                case "5":
+                    content.TypeOfStreamingQuality = StreamingQualityType.UHD4K;
+                    break;
+            }
+            Console.WriteLine("Last step! What language is this content");
+            content.Language = Console.ReadLine();
+            _streamingRepo.AddContentToDirectory(content);
+            Console.WriteLine("Your content has been added! Press any key to return to the main menu");
+            Console.ReadKey();
+
+        }
+
+        //Display all shows
+        //make a list -> 
+        //add to the list (shows)
+        //Display the shows 
+        private void ShowAllShows()
+        {
+            List<Show> shows = new List<Show>();
+            shows = _streamingRepo.GetAllShows();
+            foreach (Show content in shows)
+            {
+                Console.WriteLine($"Title: {content.Title} \n" +
+                    $"Genre: {content.Genre} \n" +
+                    $"Star Rating: {content.StarRating} \n" +
+                    $"What is it about?{content.Description} \n" +
+                    $"Words: {content.Language} \n" +
+                    $"Streaming Quality: {content.TypeOfStreamingQuality} \n" +
+                    $"Maturity Rating {content.MaturityRating} \n" +
+                    $"Is family friendly: {content.IsFamilyFriendly} \n" +
+                    $"Runtime: {content.AverageRunTime} \n" +
+                    $"Episode count: {content.EpisodeCount} \n" +
+                    $"Season Count: {content.SeasonCount} \n" +
+                    $"Episode List: ");
+                foreach (Episode episode in content.Episodes)
+                {
+                    Console.WriteLine(episode.Title);
+                }
+
+            }
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+        }
         private void ShowAllContent()
         {
             Console.Clear();
@@ -77,7 +173,7 @@ namespace _07_RepositoryPattern_ConsoleUI.UI
             List<StreamingContent> directory = _streamingRepo.GetAllContents();
 
             // Go through each item and display its properties
-            foreach(StreamingContent content in directory)
+            foreach (StreamingContent content in directory)
             {
                 Console.WriteLine($"Title: {content.Title}\n" +
                     $"Description: {content.Description}\n" +

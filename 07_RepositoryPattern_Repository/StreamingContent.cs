@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace _07_RepositoryPattern_Repository
 {
-    public enum StreamingQualityType { SD240, SD480, HD720, HD1080, UHD4K }
-    public enum MaturityRating { G, PG, PG_13, R, NC_17 }
+    public enum StreamingQualityType { SD240 =1, SD480, HD720, HD1080, UHD4K }
+    public enum MaturityRating { G =1, PG, PG_13, R, NC_17 }
 
     public class StreamingContent
     {
